@@ -7,6 +7,7 @@ import {FiShoppingCart, FiLogIn} from 'react-icons/fi';
 import {FaUser} from 'react-icons/fa';
 
 import {motion} from 'framer-motion';
+import { path } from '../../routes/routes';
 
 const Header = ({isAuthenticated = false}) => {
   return (
@@ -15,11 +16,11 @@ const Header = ({isAuthenticated = false}) => {
             <IoFastFoodOutline/>
         </motion.div>
         <div>
-            <Link to="/">Home</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/about">About</Link>
-            <Link to="/cart"><FiShoppingCart/></Link>
-            <Link to={isAuthenticated ? "/me" : "/login"}>{isAuthenticated ? <FaUser/> : <FiLogIn/>}</Link>
+            <Link to={path.Home}>Home</Link>
+            <Link to={path.Contact}>Contact</Link>
+            <Link to={path.About}>About</Link>
+            <Link to={path.Cart}><FiShoppingCart/></Link>
+            <Link to={isAuthenticated ? path.Profile : path.Login}>{isAuthenticated ? <FaUser/> : <FiLogIn/>}</Link>
         </div>
     </nav>
   )

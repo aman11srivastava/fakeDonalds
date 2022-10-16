@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { path } from '../../routes/routes';
 import "../../styles/cart.scss";
 import Article from '../common/Article';
 import CartItem from './CartItem';
@@ -16,7 +17,7 @@ const Cart = () => {
           <Article text='Tax' value={1000 * 0.18} />
           <Article text='Shipping Charges' value={200}/>
           <Article text='Total' value={1380} />
-          <Link to={"/shipping"}>Checkout</Link>
+          <Link to={path.Shipping}>Checkout</Link>
         </article>
       </main>
     </section>
