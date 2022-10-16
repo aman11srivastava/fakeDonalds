@@ -1,5 +1,6 @@
 import Cart from "../components/Cart";
 import ConfirmOrder from "../components/Cart/ConfirmOrder";
+import PaymentSuccess from "../components/Cart/PaymentSuccess";
 import Shipping from "../components/Cart/Shipping";
 import Home from "../components/Home";
 
@@ -11,7 +12,9 @@ export enum path {
     Contact = "/contact",
     About = "/about",
     Login = "/login",
-    Profile = "/me"
+    Profile = "/me",
+    Success = "/success",
+    MyOrders = '/myorders'
 }
 
 export const Routes = [
@@ -31,6 +34,10 @@ export const Routes = [
         path: path.ConfirmOrder,
         component: ConfirmOrder
     },
+    {
+        path: path.Success,
+        component: PaymentSuccess
+    }
 ];
 
 export default Routes;
