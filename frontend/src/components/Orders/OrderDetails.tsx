@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../styles/orderDetails.scss';
 import { RUPEE_SYMBOL } from '../../utils/utils';
-import Article from '../common/Article';
 import OrderInfo from './OrderInfo';
 
 const OrderDetails = () => {
