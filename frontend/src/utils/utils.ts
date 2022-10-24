@@ -16,3 +16,4 @@ export const DEFAULT_ANIMATIONS = {
     }
 }
 
+export const RUPEE_SYMBOL: string = "₹";

@@ -4,6 +4,7 @@ import ConfirmOrder from "../components/Cart/ConfirmOrder";
 import PaymentSuccess from "../components/Cart/PaymentSuccess";
 import Shipping from "../components/Cart/Shipping";
 import Home from "../components/Home";
+import Orders from "../components/Orders/Orders";
 import Profile from "../components/Profile/Profile";
 
 export enum path {
@@ -17,7 +18,8 @@ export enum path {
     Profile = "/me",
     Success = "/success",
     MyOrders = '/myorders',
-    AdminDashboard = '/admin/dashboard'
+    AdminDashboard = '/admin/dashboard',
+    SingleOrder = "/order"
 }
 
 export const Routes = [
@@ -48,6 +50,10 @@ export const Routes = [
     {
         path: path.Profile,
         component: Profile
+    },
+    {
+        path: path.MyOrders,
+        component: Orders
     }
 ];
 

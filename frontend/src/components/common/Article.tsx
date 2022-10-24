@@ -1,4 +1,5 @@
 import React from 'react'
+import { RUPEE_SYMBOL } from '../../utils/utils';
 
 interface ArticleProps {
     text: string
@@ -10,7 +11,7 @@ const Article = (props: ArticleProps) => {
     return (
         <div>
             <h4>{text}</h4>
-            <p>₹ {value}</p>
+            <p>{RUPEE_SYMBOL} {value}</p>
           </div>
     )
 }

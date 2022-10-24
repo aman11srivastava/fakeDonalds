@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { DEFAULT_ANIMATIONS, DEFAULT_IMAGE, menuType } from '../../utils/utils';
+import { DEFAULT_ANIMATIONS, DEFAULT_IMAGE, menuType, RUPEE_SYMBOL } from '../../utils/utils';
 
 interface MenuCardProps {
     menu: menuType
@@ -17,7 +17,7 @@ const MenuCard = (props: MenuCardProps) => {
             <div>Item {itemNumber}</div>
             <main>
                 <img src={image ? image : DEFAULT_IMAGE} alt={title}/>
-                <h5>₹ {price}</h5>
+                <h5>{RUPEE_SYMBOL} {price}</h5>
                 <p>{title}</p>
                 <button onClick={() => handler(itemNumber)}>Buy Now</button>
             </main>

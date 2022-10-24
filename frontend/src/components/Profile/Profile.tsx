@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { path } from '../../routes/routes';
 import '../../styles/profile.scss';
+import { DEFAULT_IMAGE } from '../../utils/utils';
 
 const Profile = () => {
   return (
     <section className='profile'>
         <main>
-            <img src='' alt='User'/>
+            <img src={DEFAULT_IMAGE} alt='User'/>
             <h5>Aman Srivastava</h5>
             <div>
                 <Link to={path.AdminDashboard}>Dashboard</Link>
