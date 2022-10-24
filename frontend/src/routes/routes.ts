@@ -1,3 +1,4 @@
+import Login from "../components/Auth/Login";
 import Cart from "../components/Cart";
 import ConfirmOrder from "../components/Cart/ConfirmOrder";
 import PaymentSuccess from "../components/Cart/PaymentSuccess";
@@ -37,6 +38,10 @@ export const Routes = [
     {
         path: path.Success,
         component: PaymentSuccess
+    },
+    {
+        path: path.Login,
+        component: Login
     }
 ];
 
