@@ -1,3 +1,4 @@
+import AdminOrders from "../components/Admin/AdminOrders";
 import Dashboard from "../components/Admin/Dashboard";
 import Users from "../components/Admin/Users";
 import Login from "../components/Auth/Login";
@@ -66,6 +67,10 @@ export const Routes = [
     {
         path: path.AdminUsers,
         component: Users
+    },
+    {
+        path: path.AdminOrders,
+        component: AdminOrders
     }
 ];
 

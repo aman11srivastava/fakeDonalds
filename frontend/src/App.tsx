@@ -5,6 +5,7 @@ import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import {path, Routes as Paths} from './routes/routes'
 import OrderDetails from './components/Orders/OrderDetails';
+import NotFound from './components/Layout/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path={path.path} element={path.component()}/>
         ))}
         <Route path={path.SingleOrder + '/:id'} element={<OrderDetails/>} />
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
