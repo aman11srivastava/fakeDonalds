@@ -1,4 +1,5 @@
 import Dashboard from "../components/Admin/Dashboard";
+import Users from "../components/Admin/Users";
 import Login from "../components/Auth/Login";
 import Cart from "../components/Cart";
 import ConfirmOrder from "../components/Cart/ConfirmOrder";
@@ -61,6 +62,10 @@ export const Routes = [
     {
         path: path.AdminDashboard,
         component: Dashboard
+    },
+    {
+        path: path.AdminUsers,
+        component: Users
     }
 ];
 
