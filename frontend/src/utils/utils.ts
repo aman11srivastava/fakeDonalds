@@ -17,3 +17,9 @@ export const DEFAULT_ANIMATIONS = {
 }
 
 export const RUPEE_SYMBOL: string = "₹";
+
+export enum OrderStatus {
+    PREPARING = "Preparing",
+    SHIPPED = "Shipped",
+    DELIVERED = "Delivered"
+}
