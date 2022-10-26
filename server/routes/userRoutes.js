@@ -1,6 +1,7 @@
 import express from 'express';
 import passport from 'passport';
 import { logout, myProfile } from '../controllers/userControllers.js';
+import { isAuthenticated } from '../middlewares/auth.js';
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ passport.authenticate("google"),
     }
 )
 
-router.get("/me", myProfile);
+router.get("/me", isAuthenticated, myProfile);
 
 router.get("/logout", logout)
 
