@@ -1,6 +1,7 @@
 import { catchAsyncError } from '../middlewares/errorMiddleware.js';
 import { Order } from '../models/Order.js';
 import ErrorHandler from '../utils/errorHandler.js';
+import { orderStatusEnum } from '../utils/utils.js';
 
 export const createOrder = catchAsyncError(async (req, res, next) => {
     const {
@@ -62,3 +63,26 @@ export const getAdminOrders = catchAsyncError(async (req, res, next) => {
         orders
     })
 });
+
+export const processOrder = catchAsyncError(async (req, res, next) => {
+    const orderId = req.params.id;
+    const order = await Order.findById(orderId);
+    if (!order) {
+        return next(new ErrorHandler("Invalid Order Id", 404));
+    }
+    else if (order.orderStatus === orderStatusEnum.PREPARING) {
+        order.orderStatus = orderStatusEnum.SHIPPED;
+    }
+    else if (order.orderStatus === orderStatusEnum.SHIPPED) {
+        order.orderStatus = orderStatusEnum.DELIVERED;
+        order.deliveredAt = new Date(Date.now());
+    }
+    else if (order.orderStatus === orderStatusEnum.DELIVERED) {
+        return next(new ErrorHandler("Order has already been delivered", 400))
+    }
+    await order.save();
+    return res.status(200).json({
+        success: true,
+        message: "Order status updated successfully"
+    })
+})
