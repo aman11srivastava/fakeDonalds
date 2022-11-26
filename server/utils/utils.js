@@ -8,3 +8,8 @@ export const paymentMethodEnum = {
     COD: "COD",
     ONLINE: "Online"
 }
+
+export const userRoleEnum = {
+    ADMIN: "admin",
+    USER: "user"
+}

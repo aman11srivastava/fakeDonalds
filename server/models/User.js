@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { userRoleEnum } from '../utils/utils.js';
 
 const schema = new mongoose.Schema({
   name: String,
@@ -10,8 +11,8 @@ const schema = new mongoose.Schema({
   },
   role: {
     type: "String",
-    enum: ["admin", "user"],
-    default: "user",
+    enum: [userRoleEnum.ADMIN, userRoleEnum.USER],
+    default: userRoleEnum.USER,
   },
 
   createdAt: {
