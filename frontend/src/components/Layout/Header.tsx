@@ -10,8 +10,6 @@ import { motion } from 'framer-motion';
 import { path } from '../../routes/routes';
 
 const Header = ({ isAuthenticated = false }) => {
-
-
   return (
     <nav>
       <motion.div initial={{ x: "-100%" }} whileInView={{ x: 0 }}>
