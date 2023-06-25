@@ -5,6 +5,7 @@ import Menu from './Menu';
 import { DEFAULT_ANIMATIONS } from '../../utils/utils';
 
 const Home = () => {
+    console.log('bbbbb')
     return (
         <>
             <section className='home'>
