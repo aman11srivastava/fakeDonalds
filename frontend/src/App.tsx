@@ -17,6 +17,9 @@ function App() {
     dispatch(loadUser())
   }, [dispatch])
 
+  console.log("a commit");
+  
+
   return (
     <BrowserRouter>
       <Header />
